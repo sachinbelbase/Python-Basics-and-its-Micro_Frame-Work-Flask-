@@ -1,0 +1,27 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form method="Post">
+
+      {{form.hidden_tag()}}
+
+      {{form.recipients.label}}<br />
+      {{form.recipients(placeholder=form.recipients.description,size=30)}}<br / >
+      <br />
+      {{form.subject.label}}<br />
+      {{form.subject(placeholder=form.subject.description,size=30)}}<br / >
+      <br />
+      {{form.body.label}}<br />
+      {{form.body(placeholder=form.body.description,size=30)}}<br / >
+      <br />
+      {{form.submit.label}}<br />
+      {{ form.submit() }}  
+      
+     </form>
+    
+  </body>
+</html>

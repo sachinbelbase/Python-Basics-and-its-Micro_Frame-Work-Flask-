@@ -2,45 +2,31 @@ from flask_wtf import FlaskForm
 from wtforms import (
     StringField,
     SubmitField,
-    EmailField,
-    TextAreaField
 )
-from wtforms.validators import DataRequired, Email, Length, ValidationError
+from wtforms.validators import DataRequired, Length
 
 
 class RegistrationForm(FlaskForm):
-    # to = StringField(
-    #     "To",
-    #     validators=[DataRequired(), Email()]
         
-    # )
-    
-    # From = StringField(
-    #     "From",
-    #     validators=[DataRequired(), Email()]
-        
-    # )
-    
-    Receptiance = StringField(
-        label="Recipients", description="Enter your receptiance with ( , ) separated",
-        validators=[DataRequired(), Email()]
+    recipients = StringField(
+        label="Recipients: ", description="Enter your receptiance with ( , ) separated",
+        validators=[DataRequired()]
         
     )
     
     subject = StringField(
-        "Subject", description="Enter the Subject",
-        validators=[Length(min=5,max=50)]
+        label="Subject: ", description="Enter the Subject",
+        validators=[Length(min=1,max=1000)]
         
     )
     
     body = StringField(
-        "Message", description="Write the message you want to send",
-        validators=[Length(min=5)]
+        label="Message: ", description="Write the message you want to send",
+        validators=[Length(min=1,max=1000)]
         
     )
     
-    
-    submit = SubmitField("Send Mail", description="Send the mail")
+    submit = SubmitField("Send Mail: ", description="Send the mail")
 
 # class NameForm(FlaskForm):
 #     name = StringField("Enter Your Name: ", validators=[DataRequired()])

@@ -1,4 +1,5 @@
 from flask import Flask, session, render_template
+from flask_mail import Message
 
 app = Flask(__name__)
 
@@ -17,11 +18,13 @@ def profile():
     username = session.get('username')
     return f"Logged in as {username}"
 
+
 #### Removing Session Data ####
 @app.route('/logout')
 def logout():
     session.pop('username', None)
     return "Logged out!"
+
 
 @app.route('/')
 def home():

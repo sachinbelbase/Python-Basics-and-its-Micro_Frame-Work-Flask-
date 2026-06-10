@@ -5,41 +5,29 @@
     <title>Document</title>
   </head>
   <body>
-    <form method="Post">
-      {{form.hidden_tag()}}
-    {% comment %} <p>
-      {{form.to.label}}<br />
-      {{form.to(size = 30)}}
-    </p>
+<form method="Post">
+  
+  <p>
+    {{form.to.label}}<br />
+    {{form.to(size = 30)}}
+  </p>
+
     {% for error in form.to.errors%}
     <span style="color: red">{{error}}</span>
     {% endfor %}
 
-    <p>
+  <p>
       {{form.From.label}}<br / >
       {{form.From(size=30)}}
-    </p>
+  </p>
 
-     {% for error in form.From.errors %}
+    {% for error in form.From.errors %}
     <span style="color: red">{{ error }}</span>
-    {% endfor %} {% endcomment %}
+    {% endfor %}
 
- 
-      {{form.recipients.label}}
-      {{form.recipients(placeholder=form.recipients.description)}}<br / >
-      {{form.recipients(size=30)}}
-     
-
-       {{form.subject.label}}
-      {{form.subject(placeholder=form.subject.description)}}<br / >
-      {{form.subject(size=30)}}
-    
-      {{form.body.label}}
-      {{form.body(placeholder=form.body.description)}}<br / >
-      {{form.body(size=30)}}
-      
-      {{form.submit.label}} {{ form.submit() }}  
-     </form>
-    
+  </form>
   </body>
+
 </html>
+
+
